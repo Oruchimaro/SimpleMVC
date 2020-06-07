@@ -52,3 +52,14 @@
    
     After doing checks we unset the value of those, so if any thing remains its
     the params. so we will pass these params to requested method with a helper function.If no method is passed then the params will be sent to default method.
+
+
+#Configure Models for app
+    We will set a model method on base controller file, then after creating th
+    model file we can get an instance of the model class with this method .
+
+
+    Inside the controller :
+    ```PHP
+    $modelInstance = $this->model('model name');
+    ```

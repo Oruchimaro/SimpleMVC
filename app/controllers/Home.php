@@ -2,9 +2,12 @@
 
 class Home extends Controller
 {
-    public function index()
+    public function index($name = '')
     {
-        echo 'index function with no param';
+        //get a model instance
+        $user = $this->model('User');
+        $user->name = $name;
+        print_r($user);
     }
 
     public function test($pa = '')
