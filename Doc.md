@@ -40,4 +40,15 @@
     explode =>  Split a url by a / and Returns an array of strings,
 
 
+# Configure Controllers for app
+    Our desired urls construct is /controller/method/param1/param2/...
 
+
+    We will get the first argument of the url array and check if the controller
+    exists.If not the controller will be the default controller we set.
+
+    Then we check if the method exists in controller.
+    If no we will get the default method .
+   
+    After doing checks we unset the value of those, so if any thing remains its
+    the params. so we will pass these params to requested method with a helper function.If no method is passed then the params will be sent to default method.
