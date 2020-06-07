@@ -7,7 +7,9 @@ class Home extends Controller
         //get a model instance
         $user = $this->model('User');
         $user->name = $name;
-        print_r($user);
+
+        //return a view 
+        $this->view('home/index', ['name' => $user->name]);
     }
 
     public function test($pa = '')

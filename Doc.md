@@ -63,3 +63,11 @@
     ```PHP
     $modelInstance = $this->model('model name');
     ```
+
+
+
+
+#Configure Views for app
+    In Controller base we will add a view method that returns an instance of
+    view and passed data to it, so we can use that data in our view.
+    Then create the view file and specify th route to it.
