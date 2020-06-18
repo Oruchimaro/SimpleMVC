@@ -67,7 +67,51 @@
 
 
 
-#Configure Views for app
+# Configure Views for app
     In Controller base we will add a view method that returns an instance of
     view and passed data to it, so we can use that data in our view.
     Then create the view file and specify th route to it.
+
+
+# Database Integration 
+    First use composer get 'Illuminate/database' package.
+    ```BASH 
+        composer show illuminate/database 
+        composer search illuminate/database 
+        composer require illuminate/database 
+    ```
+   
+    Now create a file app/database.php.
+    Then go to init.php and require the composer's autoloader file and
+    database.php file that we created.
+    Now in the composer.json file add the models directory to autoload.
+
+    ```JSON
+    {
+    "require": {
+        "illuminate/database": "^7.14"
+    },
+    "autoload": {
+        "classmap": [
+            "app/models"
+        ]
+    }
+}
+    ```
+
+    If we want to use a model in our models directory, it will be autoloaded and
+    we can use them globaly.now dump autoloaded files .
+
+    ```BASH 
+        composer dump-autoload
+    ```
+    After this we can go to HomeController for example and use something like :
+
+    ```PHP
+        User::find(1)
+    ```
+
+    Add the DB credentials to app/database.php as its shown in
+    'illuminate/databse ' packages documentation.Now extend our models with
+    Eloquent class.
+
